@@ -1,5 +1,6 @@
 import 'package:flutter_ecommerce_firebase/constants/consts.dart';
 import 'package:flutter_ecommerce_firebase/views/auth_screen/signup_screen.dart';
+import 'package:flutter_ecommerce_firebase/views/home_screen/home_screen.dart';
 import 'package:flutter_ecommerce_firebase/widgets_common/const_widgets.dart';
 import 'package:get/get.dart';
 
@@ -33,7 +34,8 @@ class LoginScreen extends StatelessWidget {
                           color: redColor,
                           title: login,
                           textColor: whiteColor,
-                          onPress: () {})
+                          onPress: (){
+                            Get.to(()=>const HomeScreen());})
                       .box
                       .width(context.screenWidth - 50)
                       .make(),

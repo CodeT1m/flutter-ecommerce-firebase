@@ -8,10 +8,17 @@ const passwordHint = "****";
 const retypePassword = "Retype Password";
 const name = "Name";
 const nameHint = "Timmy Sagacity";
-const forgetPass = "Forget Password";
+const forgetPass = "Forgot Password";
 const login = "Log in";
 const signup = "Sign up";
 const createNewAccount = "or, create a new account";
 const loginWith = "Log in with";
 const privacyPolicy = "Privacy Policy";
 const termAndCond = "Terms and Condition";
+const alreadyHaveAccount = "Already have an account?";
+
+//home strings
+const home = "home",
+    categories = "Categories",
+    cart = "Cart",
+    account = "Account";
