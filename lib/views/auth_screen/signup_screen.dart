@@ -1,11 +1,16 @@
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_ecommerce_firebase/constants/consts.dart';
-import 'package:flutter_ecommerce_firebase/views/auth_screen/signup_screen.dart';
 import 'package:flutter_ecommerce_firebase/widgets_common/const_widgets.dart';
-import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return bgWidget(
@@ -44,9 +49,7 @@ class LoginScreen extends StatelessWidget {
                           color: lightGolden,
                           title: signup,
                           textColor: redColor,
-                          onPress: () {
-                            Get.to(()=>const SignupScreen());
-                          })
+                          onPress: () {})
                       .box
                       .width(context.screenWidth - 50)
                       .make(),
