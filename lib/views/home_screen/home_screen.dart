@@ -1,6 +1,7 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_ecommerce_firebase/constants/consts.dart';
+import 'package:flutter_ecommerce_firebase/views/home_screen/components/featured_button.dart';
 import 'package:flutter_ecommerce_firebase/widgets_common/home_buttons.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -112,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
                   //featured categories
-                  10.heightBox,
+                  20.heightBox,
                   Align(
                       alignment: Alignment.centerLeft,
                       child: featuredCategories.text
@@ -120,27 +121,142 @@ class _HomeScreenState extends State<HomeScreen> {
                           .color(darkFontGrey)
                           .fontFamily(semibold)
                           .make()),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .size(18)
-                          .color(darkFontGrey)
-                          .fontFamily(semibold)
-                          .make()),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .size(18)
-                          .color(darkFontGrey)
-                          .fontFamily(semibold)
-                          .make()),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .size(18)
-                          .color(darkFontGrey)
-                          .fontFamily(semibold)
-                          .make()),
+                  20.heightBox,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                          3,
+                          (index) => Column(
+                                children: [
+                                  featuredButton(
+                                      icon: featuredImages1[index],
+                                      title: featuredTitles1[index]),
+                                  10.heightBox,
+                                  featuredButton(
+                                      icon: featuredImages2[index],
+                                      title: featuredTitles2[index]),
+                                ],
+                              )).toList(),
+                    ),
+                  ),
+
+                  //featured product
+                  20.heightBox,
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    width: double.infinity,
+                    decoration: const BoxDecoration(color: redColor),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        featuredProducts.text.white
+                            .fontFamily(bold)
+                            .size(18)
+                            .make(),
+                        10.heightBox,
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: List.generate(
+                                6,
+                                (index) => Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Image.asset(
+                                          imgP1,
+                                          width: 150,
+                                          fit: BoxFit.cover,
+                                        ),
+                                        10.heightBox,
+                                        "Laptop 4GB/64GB"
+                                            .text
+                                            .fontFamily(semibold)
+                                            .color(darkFontGrey)
+                                            .make(),
+                                        10.heightBox,
+                                        "\$600"
+                                            .text
+                                            .color(redColor)
+                                            .fontFamily(bold)
+                                            .size(16)
+                                            .make()
+                                      ],
+                                    )
+                                        .box
+                                        .white
+                                        .margin(const EdgeInsets.symmetric(
+                                            horizontal: 4))
+                                        .roundedSM
+                                        .padding(const EdgeInsets.all(8))
+                                        .make()),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  // thired swiper
+                  20.heightBox,
+                  VxSwiper.builder(
+                      aspectRatio: 16 / 9,
+                      autoPlay: true,
+                      height: 150,
+                      enlargeCenterPage: true,
+                      itemCount: secondSlidersList.length,
+                      itemBuilder: (context, index) {
+                        return Image.asset(
+                          secondSlidersList[index],
+                          fit: BoxFit.fitWidth,
+                        )
+                            .box
+                            .rounded
+                            .clip(Clip.antiAlias)
+                            .margin(const EdgeInsets.symmetric(horizontal: 8))
+                            .make();
+                      }),
+
+                  // all products section
+                  GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true, itemCount: 6,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2, mainAxisSpacing:8, crossAxisSpacing: 8, mainAxisExtent: 300),
+                      itemBuilder: (context, index) {
+                        return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Image.asset(
+                                          imgP5,
+                                          height: 200,
+                                          width: 200,
+                                          fit: BoxFit.cover,
+                                        ),
+                                        const Spacer(),
+                                        "Laptop 4GB/64GB"
+                                            .text
+                                            .fontFamily(semibold)
+                                            .color(darkFontGrey)
+                                            .make(),
+                                        10.heightBox,
+                                        "\$600"
+                                            .text
+                                            .color(redColor)
+                                            .fontFamily(bold)
+                                            .size(16)
+                                            .make()
+                                      ],
+                                    )
+                                        .box
+                                        .white
+                                        .margin(const EdgeInsets.symmetric(
+                                            horizontal: 4))
+                                        .roundedSM
+                                        .padding(const EdgeInsets.all(12))
+                                        .make();
+                      })
                 ],
               ),
             ),

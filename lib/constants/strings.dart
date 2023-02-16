@@ -30,4 +30,12 @@ const searchanyting = "Search anything...",
     topSellers = "Top Sellers",
     brand = "Brands",
     topCategories = "Top Categories",
+    womenDress = 'Women Dress',
+    girlsWatches = "Girls Watches",
+    mobilePhone = "Mobile Phone",
+    boysGlasses = "Boys Glasses",
+    tShirts = "TShirts",
+    girlsDress = "Girls Dresses",
+    featuredProducts = "Featured Products",
     featuredCategories = "Featured Categories";
+    
