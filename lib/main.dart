@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_firebase/constants/consts.dart';
 import 'package:flutter_ecommerce_firebase/constants/strings.dart';
 import 'package:flutter_ecommerce_firebase/constants/styles.dart';
 import 'package:flutter_ecommerce_firebase/views/splash_screen/splash_screen.dart';
@@ -28,11 +29,12 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         scaffoldBackgroundColor: Colors.transparent,
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
-        fontFamily: regular
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            iconTheme: IconThemeData(color: darkFontGrey)),
+        fontFamily: regular,
       ),
       home: const SplashScreen(),
-      
     );
   }
 }
